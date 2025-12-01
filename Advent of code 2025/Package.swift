@@ -18,6 +18,8 @@ let package = Package(
                 "Day1",
             ]
         ),
-        .target(name: "Day1", path: "Sources/Day1")
+        .target(name: "Utilities", dependencies: [.product(name: "ArgumentParser", package: "swift-argument-parser")]),
+        .target(name: "Day1", dependencies: [.product(name: "ArgumentParser", package: "swift-argument-parser"), "Utilities"]),
+
     ]
 )
